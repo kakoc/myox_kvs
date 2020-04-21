@@ -1,0 +1,21 @@
+name: kvs
+version: "0.1.0"
+about: key-value storage cli
+subcommands:
+    - get:
+        about: get Value by Key
+        args:
+            - key:
+                help: KEY for searching
+    - rm:
+        about: remvoe Value by Key
+        args:
+            - key:
+                help: remove value at KEY
+    - set:
+        about: set Value with Key
+        args:
+            - key:
+                help: value will be stored at KEY
+            - value:
+                help: stored VALUE
