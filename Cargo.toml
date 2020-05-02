@@ -7,14 +7,18 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]
 path = "src/lib/lib.rs"
-test = false
+# test = false
 
-[[bin]]
-name = "kvs"
-test = false
+# [[bin]]
+# name = "kvs"
+# test = false
 
 [dependencies]
 clap = {version = "2.33.0", features = ["yaml"]}
+tempfile = "3.1.0"
+walkdir = "2.3.1"
+serde = {version = "1.0.106", features = ["derive"]}
+serde_json = "1.0.51"
 
 [dev-dependencies]
 predicates = "1.0.4"
