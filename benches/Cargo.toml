@@ -1,0 +1,17 @@
+[package]
+name = "benches"
+version = "0.1.0"
+publish = false
+edition = "2018"
+
+[[bench]]
+name="engine_bench"
+path="engine_bench.rs"
+harness = false
+
+[dependencies]
+criterion = "0.3.2"
+kvs = {path = "../kvs"}
+rand = "0.7.3"
+tempfile = "3.1.0"
+sled = "0.31.0"

@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package client_server;
+
+service KvsCommand {
+    rpc Send (KvsCommandRequest) returns (KvsCommandResponse);
+}
+
+message Get {
+    string key = 1;
+}
+
+message Set {
+    string key = 1;
+    string value = 2;
+}
+
+message Remove {
+    string key = 1;
+}
+
+message KvsCommandRequest {
+    oneof cmd {
+        Get get = 1;
+        Set set = 2;
+        Remove remove = 3;
+    }
+}
+
+message Ok {
+    string msg = 1;
+}
+
+message Error {
+    string msg = 1;
+}
+
+message KvsCommandResponse {
+    oneof status {
+        Ok ok = 1;
+        Error error = 2;
+    }
+}

@@ -1,0 +1,15 @@
+name: kvs-server
+version: "0.1.0"
+about: key-value storage server cli
+args:
+    - addr:
+        # short: c
+        long: addr
+        value_name: IP:PORT
+        help: <IP>:<PORT>
+        takes_value: true
+    - engine:
+        long: engine
+        value_name: ENGINE_NAME
+        help: engine to be used
+        takes_value: true
